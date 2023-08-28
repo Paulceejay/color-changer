@@ -8,10 +8,10 @@ const Header = ({simpleClick, hexClick}:any) => {
         <h1>Color Flipper</h1>
         <div className="btn">
           <li onClick={simpleClick}>
-            <a href="/">Simple</a>
+            <a href="">Simple</a>
           </li>
           <li onClick={hexClick}>
-            <a href="/">Hex</a>
+            <a href="">Hex</a>
           </li>
         </div>
       </div>
