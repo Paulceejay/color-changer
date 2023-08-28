@@ -4,16 +4,20 @@ import "./Hero.css";
 
 const Hex = () => {
   const [color, setColor] = useState("#f1f5f3");
-  console.log(colorDatas.hexColors);
+
   const changeColorHandler = () => {
-    let randomNumber = Math.floor(
-      Math.random() * colorDatas.hexColors.length
-    );
-    document.body.style.backgroundColor = colorDatas.hexColors[randomNumber];
-    setColor(colorDatas.hexColors[randomNumber]);
-    console.log(color);
+    let hex = "#"
+
+      for (let i = 0; i < 6; i++) {
+      const selectedHexColor = Math.floor(Math.random() * colorDatas.hexColors.length);
+      hex += colorDatas.hexColors[selectedHexColor]
+      }
+    
+    document.body.style.backgroundColor = hex
+    setColor(hex);
+ 
   };
-  console.log(color);
+
   return (
     <div className="hero">
       <h1>

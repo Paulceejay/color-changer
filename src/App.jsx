@@ -1,26 +1,38 @@
-import { useState } from 'react';
-import './App.css'
-import Header from './components/Header'
-import Simple from './components/Simple';
-import Hex from './components/Simple';
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Simple from "./components/Simple";
+import Hex from "./components/Hex";
 
 function App() {
-  let heroName = false
+  const [mode, setMode] = useState("hex");
 
-const simpleClickHandler = () => {
-  heroName = true
+  const simpleClickHandler = () => {
+    setMode("simple")
+    document.body.style.backgroundColor = "white"
+  };
+  const hexClickHandler = () => {
+    setMode("hex")
+    document.body.style.backgroundColor = "white";
+  };
+
+  if (mode === "hex") {
+    return (
+      <>
+        <Header simpleClick={simpleClickHandler} hexClick={hexClickHandler} />
+        <Hex />
+      </>
+    );
+  }
+
+  if (mode === "simple") {
+    return (
+      <>
+        <Header simpleClick={simpleClickHandler} hexClick={hexClickHandler} />
+        <Simple />
+      </>
+    );
+  }
 }
-const hexClickHandler = () => {
-  heroName = true
-};
 
-  return (
-    <>
-      <Header simpleClick={simpleClickHandler} hexClick={hexClickHandler} />
-      {heroName && <Simple />}
-      {!heroName && <Hex />}
-    </>
-  );
-}
-
-export default App
+export default App;

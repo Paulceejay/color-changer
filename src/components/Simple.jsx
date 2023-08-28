@@ -6,11 +6,15 @@ const Simple = () => {
   const [color, setColor] = useState("white")
 
   const changeColorHandler = () => {
- let randomNumber = Math.floor(
+
+ const selectedSimpleColor = Math.floor(
    Math.random() * colorDatas.simpleColors.length
  );
- document.body.style.backgroundColor = colorDatas.simpleColors[randomNumber];
- setColor(colorDatas.simpleColors[randomNumber])
+
+ const simpleColor = colorDatas.simpleColors[selectedSimpleColor];
+ 
+ document.body.style.backgroundColor = simpleColor
+ setColor(simpleColor)
 
   }
 
