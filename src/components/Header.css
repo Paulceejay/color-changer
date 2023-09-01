@@ -3,8 +3,7 @@ header {
      background-color: white;
 }
 
-.header {
-   
+.header { 
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -22,12 +21,11 @@ li {
 }
 
 .btn{
-  padding:1em;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    
 }
